@@ -1,0 +1,49 @@
+<html>
+    <head>
+        <title>号码识别设置</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,height=device-height,inital-scale=1.0,maximum-scale=1.0,user-scalable=no;" />
+        <link href="css/style.css" rel="stylesheet" type="text/css"/>
+        <link href="css/common.css" rel="stylesheet" type="text/css"/>
+        <script src="js/html5shiv.min.js" type="text/javascript"></script>
+        <script src="js/jquery-1.12.4.min.js" type="text/javascript"></script>
+    </head>
+    <body>
+        <!--nav-->
+        <nav>
+            <div class="all">
+                <a href="index.html"><p style="width:10%;">&LT;</p></a>
+                <a href="#"><p style="width:75%;">号码识别设置</p></a>
+            </div>
+        </nav>
+        <!--content-->
+        <section class="content">
+            <img src="img/bg_gengxin@2x.png" alt=""/>
+            <span class="num">0%</span>
+            <p class="txt">正在下载号码识别基础数据包...</p>
+            <div class="grey">
+                <p class="green"></p>
+            </div>
+        </section>
+        <script>
+            window.onload = function() {
+                var n = 0;
+                var num;
+                var i = 0;
+                var time;
+                var ss = function() {
+                    i++;
+                    $(".green").css("width", i + '%');
+                    $(".num").text(i + '%');
+                    time = setTimeout(ss, 200);
+                    if (i >= 99) {
+                        ss = '';
+                        $(".txt").text('数据包下载成功');
+                    }
+                    ;
+                };
+                ss();
+            };
+        </script>
+    </body>
+</html>
